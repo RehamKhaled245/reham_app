@@ -1,0 +1,12 @@
+# streamlit
+# transformers
+# torch
+# sentencepiece
+
+streamlit==1.32.0
+transformers==4.39.3
+torch==2.1.2
+sentencepiece
+sacremoses
+
+
