@@ -115,7 +115,7 @@ if "generated_text" not in st.session_state:
 if st.button("Start processing..."):
     if user_input.strip() != "":
         with st.spinner("Wait ...!⏳"):
-            generated_output = text_generator(user_input, max_length=100, num_return_sequences=1,truncation=True)
+            generated_output = text_generator(user_input, max_length=100, num_return_sequences=1,truncation=True,pad_token_id=50256)
             generated_text = generated_output[0]['generated_text']
             st.subheader("🔹generated_text: ")
             st.write(generated_text)
