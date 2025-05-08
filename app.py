@@ -85,19 +85,15 @@
 
 
 import streamlit as st
-from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
+from transformers import pipeline
 import torch
 
-# ✨ تحميل الموديل والتوكنيزر يدويًا وتحديد الجهاز
-model_name = "openai-community/gpt2"
-tokenizer = AutoTokenizer.from_pretrained(model_name)
-model = AutoModelForCausalLM.from_pretrained(model_name, torch_dtype=torch.float32)
 
 # تحديد الجهاز: 0 لو في CUDA، -1 يعني CPU
 device = 0 if torch.cuda.is_available() else -1
 
 # إنشاء pipeline للنصوص
-text_generator = pipeline("text-generation", model=model, tokenizer=tokenizer, device=device)
+text_generator = pipeline("text-generation", model="openai-community/gpt2", device=device)
 
 # باقي الموديلات زي ما هي
 # summarizer = pipeline("summarization", model="google-t5/t5-small")
