@@ -100,7 +100,7 @@ device = 0 if torch.cuda.is_available() else -1
 text_generator = pipeline("text-generation", model=model, tokenizer=tokenizer, device=device)
 
 # باقي الموديلات زي ما هي
-n# summarizer = pipeline("summarization", model="google-t5/t5-small")
+# summarizer = pipeline("summarization", model="google-t5/t5-small")
 # translator = pipeline("translation_en_to_fr", model="Helsinki-NLP/opus-mt-en-fr")
 # question_answering = pipeline("question-answering", model="deepset/roberta-base-squad2")
 summarizer = pipeline("summarization", model="sshleifer/distilbart-cnn-12-6", device=-1)
